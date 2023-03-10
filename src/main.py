@@ -1,4 +1,5 @@
-from utils import model, view
+import utils.model as model
+import utils.view as view
 
 # GAME LOGIC
 
@@ -30,7 +31,7 @@ while True:
     while model.playing:
 
         # Prompt for Player to Hit or Stand
-        view.hit_or_stand(deck, player_hand)
+        model.hit_or_stand(deck, player_hand)
 
         # Show cards (but keep one dealer card hidden)
         view.show_some(player_hand, dealer_hand)
@@ -42,8 +43,8 @@ while True:
 
     if player_hand.value <= 21:
 
-        while dealer_hand.value < 17:
-            view.hit(deck, dealer_hand)
+        while dealer_hand.value < player_hand.value:
+            model.hit(deck, dealer_hand)
 
         # Show all cards
         view.show_all(player_hand, dealer_hand)

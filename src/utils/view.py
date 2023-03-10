@@ -1,5 +1,3 @@
-from model import playing
-
 # Ask how many chips player wants to bet
 def take_bet(chips):
     while True:
@@ -13,36 +11,12 @@ def take_bet(chips):
             else:
                 break
 
-# Taking a hit until bust
-def hit(deck, hand):
-    hand.add_card(deck.deal())
-    hand.adjust_for_ace()
-
-# ask if the player wants to hit or stand
-def hit_or_stand(deck, hand):
-    global playing  # to control the while loop
-
-    while True:
-        x = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
-
-        if x[0].lower() == 'h':
-            hit(deck, hand)
-        
-        elif x[0].lower() == 's':
-            print("Player stands. Dealer is playing.")
-            playing = False
-        
-        else:
-            print("Sorry, please try again.")
-            continue
-        break
-
 # DISPLAY CARDS
 # display cards, show one card for the dealer and both cards for player
 def show_some(player, dealer):
     print("\nDealer's Hand:")
     print(" <card hidden>")
-    print('', dealer.cards[1]) 
+    print('', dealer.cards[1])
     print("\nPlayer's Hand:", *player.cards, sep='\n ')
 
 # display cards, show both cards for player and dealer

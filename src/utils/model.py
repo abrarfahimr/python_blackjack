@@ -69,7 +69,7 @@ class Hand:
 
     def adjust_for_ace(self):
         # if the value is over 21 and they have an ace we subtract 10 from value to stay under 21
-        while self.value > 21 and self.aces:
+        while self.value > 21 and self.aces > 0:
             self.value -= 10
             self.aces -= 1
 
@@ -85,3 +85,29 @@ class Chip:
 
     def lose_bet(self):
         self.total -= self.bet  # Decrease the total if player lose
+
+
+# Taking a hit until bust
+def hit(deck, hand):
+    hand.add_card(deck.deal())
+    hand.adjust_for_ace()
+
+
+# ask if the player wants to hit or stand
+def hit_or_stand(deck, hand):
+    global playing  # to control the while loop
+
+    while True:
+        x = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
+
+        if x[0].lower() == 'h':
+            hit(deck, hand)
+
+        elif x[0].lower() == 's':
+            print("Player stands. Dealer is playing.")
+            playing = False
+
+        else:
+            print("Sorry, please try again.")
+            continue
+        break
