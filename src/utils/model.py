@@ -29,9 +29,8 @@ class Card:
     def __str__(self) -> str:
         return self.rank + ' of ' + self.suit
 
+
 # Deck Class
-
-
 class Deck:
     def __init__(self) -> None:
         self.deck = []
@@ -54,9 +53,8 @@ class Deck:
         single_card = self.deck.pop()
         return single_card
 
+
 # Hand Class
-
-
 class Hand:
     def __init__(self) -> None:
         self.cards = []  # start with empty hand with no cards
@@ -75,9 +73,8 @@ class Hand:
             self.value -= 10
             self.aces -= 1
 
+
 # Chip Class
-
-
 class Chip:
     def __init__(self) -> None:
         self.total = 100
