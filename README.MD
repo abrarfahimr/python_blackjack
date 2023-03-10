@@ -9,10 +9,10 @@ The game is run on the terminal. To help users who do not know how to play here 
 - You can ask for another card (hit) or stick with your current hand (stand). You have the option to keep hitting until you’re satisfied with your hand, or you go over 21 (bust).
 - If you bust, the dealer wins regardless of the dealer’s eventual hand. The dealer must hit until her cards total 17 or higher.
 
-### Dependencies
+## Dependencies
 python, terminal
 
-### Installation
+## Installation
 * Download or Git Clone file to desired folder.
 * Cd into the directory you git cloned the code. 
 * Run the code in your terminal (Use the 'run' button in your IDE or run 'python main.py' on the terminal)
